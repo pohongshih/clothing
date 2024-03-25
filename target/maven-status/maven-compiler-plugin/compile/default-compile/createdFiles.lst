@@ -3,6 +3,7 @@ com\example\demo\JWTUtil.class
 com\example\demo\Product.class
 com\example\demo\SecurityConfig.class
 com\example\demo\UploadController.class
+com\example\demo\CorsConfig.class
 com\example\demo\UserEntityDTO.class
 com\example\demo\ProductService.class
 com\example\demo\UserRepository.class
