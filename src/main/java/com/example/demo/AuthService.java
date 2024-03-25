@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -14,9 +13,6 @@ import java.util.Optional;
 public class AuthService {
     @Autowired
     private JWTUtil jwtUtil;
-
-    @Autowired
-    private UserService userService;
 
     @Autowired
     private UserRepository userRepository;
@@ -45,7 +41,7 @@ public class AuthService {
 
 
     public Map<String,Object> login(String username,String password){
-        Optional<UserEntity> user = userRepository.findByEmail(username);
+        Optional<UserEntity> user = userRepository.findByUsername(username);
         Map<String,Object> map = new HashMap<>();
         if(user.isPresent()){
             if(passwordEncoder().matches(password,user.get().getPassword())){
