@@ -54,6 +54,8 @@ public class AuthService {
         }else{
             map.put("status",false);
             map.put("message","無此帳號");
+            map.put("username",username);
+            map.put("user",user);
         }
         return map;
     }
