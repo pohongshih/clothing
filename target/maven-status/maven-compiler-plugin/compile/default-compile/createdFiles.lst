@@ -1,0 +1,15 @@
+com\example\demo\DemoApplication.class
+com\example\demo\JWTUtil.class
+com\example\demo\Product.class
+com\example\demo\SecurityConfig.class
+com\example\demo\UploadController.class
+com\example\demo\UserEntityDTO.class
+com\example\demo\ProductService.class
+com\example\demo\UserRepository.class
+com\example\demo\UserService.class
+com\example\demo\JwtTokenFilter.class
+com\example\demo\AuthController.class
+com\example\demo\ProductRepository.class
+com\example\demo\ProductController.class
+com\example\demo\AuthService.class
+com\example\demo\UserEntity.class
