@@ -34,6 +34,7 @@ public class AuthService {
 
             map.put("Info",userEntityDTO);
             map.put("token",jwtUtil.generateToken(createClaims(user)));
+            map.put("message","註冊成功!");
             map.put("status",true);
         }
         return map;
@@ -46,18 +47,19 @@ public class AuthService {
         if(user.isPresent()){
             if(passwordEncoder().matches(password,user.get().getPassword())){
                 ModelMapper modelMapper = new ModelMapper();
-                UserEntityDTO userEntityDTO = modelMapper.map(user, UserEntityDTO.class);
+                UserEntityDTO userEntityDTO = modelMapper.map(user.get(), UserEntityDTO.class);
 
                 map.put("Info",userEntityDTO);
                 map.put("token",jwtUtil.generateToken(createClaims(user.get())));
+                map.put("message","登入成功!");
                 map.put("status",true);
             }else{
                 map.put("status",false);
-                map.put("message","密碼錯誤");
+                map.put("message","密碼錯誤!");
             }
         }else{
             map.put("status",false);
-            map.put("message","無此帳號");
+            map.put("message","無此帳號!");
             map.put("username",username);
             map.put("user",user);
         }
