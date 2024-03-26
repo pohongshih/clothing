@@ -45,6 +45,10 @@ public class AuthService {
         Map<String,Object> map = new HashMap<>();
         if(user.isPresent()){
             if(passwordEncoder().matches(password,user.get().getPassword())){
+                ModelMapper modelMapper = new ModelMapper();
+                UserEntityDTO userEntityDTO = modelMapper.map(user, UserEntityDTO.class);
+
+                map.put("Info",userEntityDTO);
                 map.put("token",jwtUtil.generateToken(createClaims(user.get())));
                 map.put("status",true);
             }else{
