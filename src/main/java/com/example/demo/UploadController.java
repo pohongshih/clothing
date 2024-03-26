@@ -77,7 +77,8 @@ public class UploadController {
 
             // String uploadedFilePath = dest.getAbsolutePath();
             System.out.println(uploadDir);
-            return "img/" + fileName;
+            //return "img/" + fileName;
+            return dest.getAbsolutePath();
         } catch (IOException e) {
             e.printStackTrace();
             return "上傳失敗：" + e.getMessage();
