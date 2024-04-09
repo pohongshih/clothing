@@ -33,7 +33,14 @@ public class SecurityConfig {
                                 "/product/**",
                                 "/upload",
                                 "/multiupload",
-                                "/img/**"
+                                "/img/**",
+                                "/ws-endpoint/**",
+                                "/send/**",
+                                "/chat/**",
+                                "/messages/**",
+                                "/save/**",
+                                "/recent/**",
+                                "/username/**"
                         ).permitAll()   //指定上述匹配規則中的路徑，允許所有用戶訪問，即不需要進行身份驗證。
                         .anyRequest().authenticated()   //其他尚未匹配到的路徑都需要身份驗證
                 )
