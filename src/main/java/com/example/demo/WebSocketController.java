@@ -38,8 +38,8 @@ public class WebSocketController {
         }
 
         System.out.println(sender);
-//        messagingTemplate.convertAndSendToUser(receiver,"/chat/contact", responseMap);
-//        messagingTemplate.convertAndSendToUser(sender,"/chat/contact", responseMap);
+        messagingTemplate.convertAndSendToUser(receiver,"/chat", responseMap);
+        messagingTemplate.convertAndSendToUser(sender,"/chat", responseMap);
         messagingTemplate.convertAndSend("/chat/"+room, responseMap);
 
 
